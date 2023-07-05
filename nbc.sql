@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2023 at 09:41 PM
+-- Generation Time: Jul 03, 2023 at 03:19 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sasu-knn`
+-- Database: `nbc`
 --
 
 -- --------------------------------------------------------
@@ -30,19 +30,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `barang` (
   `barang_id` int(11) NOT NULL,
   `sub_kriteria_id` int(11) NOT NULL,
-  `nama_barang` varchar(121) NOT NULL
+  `nama_barang` varchar(121) NOT NULL,
+  `gambar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`barang_id`, `sub_kriteria_id`, `nama_barang`) VALUES
-(1, 3, 'Coca - cola'),
-(2, 2, 'Sari Roti Tawar'),
-(3, 3, 'Le - Mineralle'),
-(4, 2, 'Susu Frisian Flag'),
-(5, 2, 'Snack Kripik');
+INSERT INTO `barang` (`barang_id`, `sub_kriteria_id`, `nama_barang`, `gambar`) VALUES
+(1, 3, 'Coca - cola', 'https://ibs.sch.id/wp-content/uploads/2022/02/cocacola.jpg'),
+(2, 2, 'Sari Roti Tawar', 'https://www.sariroti.com/storage/app/media/03-product/rotitawar/roti_tawar.jpg'),
+(3, 3, 'Le - Mineralle', 'https://drivethru.klikindomaret.com/tz0m/wp-content/uploads/sites/23/2021/05/le-minerale-600ml-1.jpg'),
+(4, 2, 'Susu Frisian Flag', 'https://www.frisianflag.com/storage/app/media/Produk/RTD%20All%20Flavor.jpg'),
+(5, 2, 'Snack Kripik', 'https://www.jualanmakanan.com/promosi-makanan/images/2021/10/107_1.jpg'),
+(6, 16, 'Barang Cek', 'http://localhost:8080/NBC_sales/img/cek.png');
 
 -- --------------------------------------------------------
 
@@ -152,7 +154,42 @@ INSERT INTO `data_testing` (`id_data_testing`, `jenis_kelamin_testing`, `pekerja
 (103, 2, 2, 3, 4, 3),
 (104, 2, 2, 3, 4, 3),
 (105, 2, 3, 2, 4, 2),
-(106, 2, 2, 3, 3, 3);
+(106, 2, 2, 3, 3, 3),
+(107, 2, 3, 3, 4, 2),
+(108, 2, 3, 3, 3, 3),
+(109, 2, 3, 4, 3, 3),
+(110, 2, 2, 3, 4, 3),
+(111, 2, 3, 3, 4, 2),
+(112, 2, 3, 3, 4, 2),
+(113, 2, 3, 4, 4, 2),
+(114, 2, 2, 1, 4, 3),
+(115, 2, 2, 2, 4, 3),
+(116, 2, 2, 1, 4, 3),
+(117, 2, 2, 1, 4, 3),
+(118, 2, 2, 1, 4, 3),
+(119, 2, 2, 1, 4, 3),
+(120, 2, 2, 1, 4, 3),
+(121, 2, 2, 1, 4, 3),
+(122, 2, 2, 1, 4, 3),
+(123, 2, 2, 1, 4, 3),
+(124, 2, 2, 1, 4, 3),
+(125, 2, 2, 2, 4, 2),
+(126, 2, 2, 2, 4, 2),
+(127, 2, 3, 2, 4, 2),
+(128, 2, 3, 2, 4, 2),
+(129, 2, 3, 2, 4, 2),
+(130, 2, 3, 2, 4, 2),
+(131, 2, 3, 2, 4, 2),
+(132, 2, 3, 2, 4, 2),
+(133, 2, 3, 2, 4, 2),
+(134, 2, 3, 2, 4, 2),
+(135, 2, 3, 2, 4, 2),
+(136, 2, 2, 1, 4, 3),
+(137, 2, 2, 1, 4, 3),
+(138, 2, 2, 1, 4, 3),
+(139, 2, 3, 4, 3, 3),
+(140, 2, 4, 4, 3, 2),
+(141, 2, 2, 3, 4, 3);
 
 -- --------------------------------------------------------
 
@@ -182,105 +219,40 @@ INSERT INTO `data_training` (`id_data_training`, `jenis_barang`, `harga`, `terju
 (6, '2', '4', '3', '3', 3, 'Restock'),
 (7, '2', '2', '3', '2', 2, 'Restock'),
 (8, '2', '2', '2', '2', 2, 'Tidak Restock'),
-(9, '2', '5', '3', '5', 3, 'Restock'),
-(10, '2', '5', '3', '5', 3, 'Tidak Restock'),
-(20, '2', '3', '3', '0', 2, 'Restock'),
-(21, '2', '3', '3', '0', 2, 'Restock'),
-(22, '2', '2', '4', '1', 2, 'Restock'),
-(23, '2', '2', '3', '1', 2, 'Restock'),
-(24, '2', '5', '2', '1', 3, 'Tidak Restock'),
-(25, '2', '2', '2', '1', 2, 'Restock'),
-(26, '2', '1', '4', '0', 2, 'Restock'),
-(27, '2', '4', '3', '4', 3, 'Tidak Restock'),
-(28, '2', '1', '4', '0', 2, 'Restock'),
-(29, '2', '4', '2', '4', 3, 'Tidak Restock'),
-(30, '2', '3', '3', '0', 2, 'Restock'),
-(31, '2', '3', '3', '4', 2, 'Restock'),
-(32, '2', '3', '3', '4', 2, 'Restock'),
-(33, '2', '3', '3', '4', 2, 'Restock'),
-(34, '2', '4', '3', '4', 0, 'Tidak Restock'),
-(35, '2', '3', '4', '0', 3, 'Tidak Restock'),
-(36, '2', '2', '4', '1', 2, 'Tidak Restock'),
-(37, '2', '3', '4', '9', 3, 'Restock'),
-(38, '2', '2', '4', '9', 3, 'Tidak Restock'),
-(39, '2', '2', '4', '0', 3, 'Tidak Restock'),
-(40, '0', '0', '0', '0', 0, 'Tidak Restock'),
-(41, '0', '0', '0', '0', 0, 'Tidak Restock'),
-(42, '2', '2', '4', '1', 3, 'Restock'),
-(43, '2', '2', '4', '1', 3, 'Tidak Restock'),
-(44, '2', '2', '4', '1', 3, 'Tidak Restock'),
-(45, '2', '2', '4', '1', 3, 'Restock'),
-(46, '2', '2', '4', '1', 3, 'Restock'),
-(47, '2', '2', '4', '1', 3, 'Restock'),
-(48, '2', '2', '4', '1', 3, 'Restock'),
-(49, '2', '2', '4', '1', 3, 'Tidak Restock'),
-(50, '2', '2', '4', '1', 3, 'Tidak Restock'),
-(51, '2', '2', '4', '1', 3, 'Tidak Restock'),
-(52, '2', '2', '4', '2', 3, 'Tidak Restock'),
-(53, '2', '2', '4', '2', 3, 'Tidak Restock'),
-(54, '2', '4', '3', '2', 3, 'Tidak Restock'),
-(55, '2', '2', '4', '2', 2, 'Tidak Restock'),
-(56, '2', '3', '4', '2', 3, 'Tidak Restock'),
-(57, '2', '2', '4', '2', 3, 'Tidak Restock'),
-(58, '2', '2', '4', '2', 3, 'Tidak Restock'),
-(59, '2', '2', '4', '2', 3, 'Tidak Restock'),
-(60, '2', '2', '4', '2', 3, 'Tidak Restock'),
-(61, '2', '2', '4', '2', 3, 'Tidak Restock'),
-(62, '2', '2', '4', '2', 3, 'Restock'),
-(63, '2', '2', '4', '2', 3, 'Tidak Restock'),
-(64, '2', '2', '3', '3', 3, 'Tidak Restock'),
-(65, '2', '2', '4', '2', 3, 'Tidak Restock'),
-(66, '2', '2', '4', '2', 3, 'Tidak Restock'),
-(67, '2', '2', '4', '2', 3, 'Tidak Restock'),
-(68, '2', '2', '4', '2', 3, 'Tidak Restock'),
-(69, '2', '3', '4', '4', 3, 'Tidak Restock'),
-(70, '2', '3', '4', '4', 3, 'Tidak Restock'),
-(71, '2', '3', '4', '3', 3, 'Tidak Restock'),
-(72, '2', '3', '4', '3', 3, 'Tidak Restock'),
-(73, '2', '3', '3', '1', 3, 'Tidak Restock'),
-(74, '2', '2', '4', '1', 3, 'Tidak Restock'),
-(75, '2', '3', '4', '2', 3, 'Tidak Restock'),
-(76, '2', '2', '3', '1', 3, 'Tidak Restock'),
-(77, '2', '3', '3', '4', 2, 'Restock'),
-(78, '2', '2', '2', '4', 2, 'Restock'),
-(79, '2', '2', '2', '4', 2, 'Restock'),
-(80, '2', '3', '3', '3', 3, 'Tidak Restock'),
-(81, '2', '3', '3', '3', 3, 'Tidak Restock'),
-(82, '2', '3', '3', '4', 3, 'Tidak Restock'),
-(83, '2', '3', '3', '4', 3, 'Tidak Restock'),
-(84, '2', '3', '3', '4', 3, 'Tidak Restock'),
-(85, '2', '3', '3', '4', 3, 'Restock'),
-(86, '2', '3', '3', '4', 3, 'Restock'),
-(87, '2', '4', '2', '4', 2, 'Tidak Restock'),
-(88, '2', '3', '1', '4', 3, 'Restock'),
-(89, '2', '3', '2', '4', 3, 'Tidak RestockRe'),
-(90, '2', '3', '2', '4', 3, 'Restock'),
-(91, '2', '3', '2', '4', 3, 'Restock'),
-(92, '2', '3', '2', '4', 3, 'Restock'),
-(93, '2', '3', '2', '4', 3, 'Tidak Restock'),
-(94, '2', '3', '2', '4', 3, 'Tidak Restock'),
-(95, '2', '3', '2', '4', 3, 'Tidak Restock'),
-(96, '2', '3', '2', '4', 3, 'Tidak Restock'),
-(97, '2', '3', '2', '4', 2, 'Restock'),
-(98, '2', '3', '3', '4', 2, 'Tidak Restock'),
-(99, '2', '3', '3', '4', 2, 'Tidak Restock'),
-(100, '2', '3', '3', '4', 2, 'Tidak Restock'),
-(101, '2', '3', '3', '4', 2, 'Tidak Restock'),
-(102, '2', '3', '3', '4', 2, 'Restock'),
-(103, '2', '3', '3', '4', 2, 'Tidak Restock'),
-(104, '2', '3', '3', '4', 2, 'Restock'),
-(105, '2', '2', '3', '4', 3, 'Tidak Restock'),
-(106, '2', '2', '3', '4', 3, 'Restock'),
-(107, '2', '2', '4', '4', 2, 'Tidak Restock'),
-(108, '2', '2', '2', '4', 3, 'Tidak Restock'),
-(109, '2', '2', '3', '4', 3, 'Restock'),
-(110, '2;Makanan', '2;0 - 10.000', '2;101 - 500', '4;0 - 3 Bulan ', 3, '1'),
-(113, '2', '2', '2', '4', 3, 'Tidak Restock'),
-(114, '2', '2', '3', '4', 3, 'Tidak Restock'),
-(115, '2', '2', '3', '4', 3, 'Tidak Restock'),
-(116, '2', '2', '3', '4', 3, 'Tidak Restock'),
-(117, '2', '3', '2', '4', 2, 'Tidak Restock'),
-(118, '2', '2', '3', '3', 3, 'Tidak Restock');
+(120, '2', '3', '3', '3', 3, 'Restock'),
+(121, '2', '3', '4', '3', 3, 'Restock'),
+(122, '2', '2', '3', '4', 3, 'Restock'),
+(123, '2', '3', '3', '4', 2, 'Restock'),
+(124, '2', '3', '3', '4', 2, 'Restock'),
+(125, '2', '3', '4', '4', 2, 'Restock'),
+(126, '2', '2', '1', '4', 3, 'Tidak Restock'),
+(127, '2', '2', '2', '4', 3, 'Tidak Restock'),
+(128, '2', '2', '1', '4', 3, 'Tidak Restock'),
+(129, '2', '2', '1', '4', 3, 'Tidak Restock'),
+(130, '2', '2', '1', '4', 3, 'Tidak Restock'),
+(131, '2', '2', '1', '4', 3, 'Tidak Restock'),
+(132, '2', '2', '1', '4', 3, 'Tidak Restock'),
+(133, '2', '2', '1', '4', 3, 'Tidak Restock'),
+(134, '2', '2', '1', '4', 3, 'Restock'),
+(135, '2', '2', '1', '4', 3, 'Restock'),
+(136, '2', '2', '1', '4', 3, 'Restock'),
+(137, '2', '2', '2', '4', 2, 'Restock'),
+(138, '2', '2', '2', '4', 2, 'Restock'),
+(139, '2', '3', '2', '4', 2, 'Restock'),
+(140, '2', '3', '2', '4', 2, 'Restock'),
+(141, '2', '3', '2', '4', 2, 'Restock'),
+(142, '2', '3', '2', '4', 2, 'Restock'),
+(143, '2', '3', '2', '4', 2, 'Restock'),
+(144, '2', '3', '2', '4', 2, 'Restock'),
+(145, '2', '3', '2', '4', 2, 'Restock'),
+(146, '2', '3', '2', '4', 2, 'Restock'),
+(147, '2', '3', '2', '4', 2, 'Restock'),
+(148, '2', '2', '1', '4', 3, 'Tidak Restock'),
+(149, '2', '2', '1', '4', 3, 'Tidak Restock'),
+(150, '2', '2', '1', '4', 3, 'Tidak Restock'),
+(151, '2', '3', '4', '3', 3, 'Tidak Restock'),
+(152, '2', '4', '4', '3', 2, 'Restock'),
+(153, '2', '2', '3', '4', 3, 'Tidak Restock');
 
 -- --------------------------------------------------------
 
@@ -461,7 +433,51 @@ INSERT INTO `urut` (`id_urut`, `jenis_barang`, `harga`, `terjual`, `kadaluarsa`,
 (115, 4, 4, 0, 0, 4, '1.4142135623731', 'Tidak Restock'),
 (116, 4, 4, 0, 0, 4, '0', 'Tidak Restock'),
 (117, 4, 9, 4, 16, 6, '1.7320508075689', 'Non Subsidi'),
-(118, 4, 4, 0, 1, 4, '1.7320508075689', 'Tidak Restock');
+(118, 4, 4, 0, 1, 4, '1.7320508075689', 'Tidak Restock'),
+(119, 9, 9, 9, 16, 6, '1.4142135623731', 'Tidak Restock'),
+(120, 0, 0, 1, 1, 2, '2.8284271247462', 'Tidak Restock'),
+(121, 0, 0, 0, 1, 1, '3', 'Tidak Restock'),
+(122, 1, 1, 1, 4, 3, '2.4494897427832', 'Tidak Restock'),
+(123, 0, 0, 0, 0, 1, '2.4494897427832', 'Restock'),
+(124, 0, 0, 0, 0, 1, '2.4494897427832', 'Restock'),
+(125, 0, 0, 1, 0, 1, '3', 'Restock'),
+(126, 1, 1, 9, 4, 4, '2.4494897427832', 'Tidak Restock'),
+(127, 1, 1, 4, 4, 3, '2.2360679774998', 'Tidak Restock'),
+(128, 1, 1, 9, 4, 4, '2.4494897427832', 'Tidak Restock'),
+(129, 1, 1, 9, 4, 4, '2.4494897427832', 'Tidak Restock'),
+(130, 1, 1, 9, 4, 4, '2.4494897427832', 'Tidak Restock'),
+(131, 1, 1, 9, 4, 4, '2.4494897427832', 'Tidak Restock'),
+(132, 1, 1, 9, 4, 4, '2.4494897427832', 'Tidak Restock'),
+(133, 1, 1, 9, 4, 4, '2.4494897427832', 'Tidak Restock'),
+(134, 1, 1, 9, 4, 4, '2.4494897427832', 'Tidak Restock'),
+(135, 1, 1, 9, 4, 4, '2.4494897427832', 'Tidak Restock'),
+(136, 1, 1, 9, 4, 4, '2.4494897427832', 'Tidak Restock'),
+(137, 1, 1, 1, 0, 2, '2', 'Restock'),
+(138, 1, 1, 1, 0, 2, '2', 'Restock'),
+(139, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(140, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(141, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(142, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(143, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(144, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(145, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(146, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(147, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(148, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(149, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(150, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(151, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(152, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(153, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(154, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(155, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(156, 0, 0, 1, 0, 1, '2.2360679774998', 'Restock'),
+(157, 1, 1, 9, 4, 4, '2.4494897427832', 'Tidak Restock'),
+(158, 1, 1, 9, 4, 4, '2.4494897427832', 'Tidak Restock'),
+(159, 1, 1, 9, 4, 4, '2.4494897427832', 'Tidak Restock'),
+(160, 0, 0, 0, 1, 1, '2.6457513110646', 'Tidak Restock'),
+(161, 1, 1, 1, 1, 2, '3', 'Restock'),
+(162, 1, 1, 1, 4, 3, '2.4494897427832', 'Tidak Restock');
 
 -- --------------------------------------------------------
 
@@ -569,25 +585,25 @@ ALTER TABLE `variabel_kriteria`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `barang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `barang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `data_testing`
 --
 ALTER TABLE `data_testing`
-  MODIFY `id_data_testing` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `id_data_testing` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
 
 --
 -- AUTO_INCREMENT for table `data_training`
 --
 ALTER TABLE `data_training`
-  MODIFY `id_data_training` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+  MODIFY `id_data_training` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
 
 --
 -- AUTO_INCREMENT for table `sementara`
 --
 ALTER TABLE `sementara`
-  MODIFY `id_sementara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5590;
+  MODIFY `id_sementara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5990;
 
 --
 -- AUTO_INCREMENT for table `sub_kriteria`
@@ -599,7 +615,7 @@ ALTER TABLE `sub_kriteria`
 -- AUTO_INCREMENT for table `urut`
 --
 ALTER TABLE `urut`
-  MODIFY `id_urut` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+  MODIFY `id_urut` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=163;
 
 --
 -- AUTO_INCREMENT for table `user`

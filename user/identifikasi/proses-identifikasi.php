@@ -1,6 +1,6 @@
 <?php
 
-// print_r($_POST;);exit;
+// print_r($_POST['nama_barang']);exit;
 
 include('../../config/koneksi.php');
 // $b_x = $_POST['x'];
@@ -10,6 +10,7 @@ $harga = explode(";",$_POST['harga'])[0];
 $terjual	= explode(";",$_POST['terjual'])[0];
 $kadaluarsa		= explode(";",$_POST['kadaluarsa'])[0];
 $rs	= explode(";",$_POST['rs'])[0];
+$g = explode(";",$_POST['nama_barang'])[1];;
 
 $ambil_data_training = mysqli_query($con,"SELECT * FROM data_training ORDER BY id_data_training ASC");
 $numrows    = mysqli_num_rows($ambil_data_training);
@@ -86,6 +87,8 @@ while($datasorting = $sorting->fetch_assoc()){
 }
 
 $tesHasil = mysqli_query($con,"SELECT * FROM urut ORDER BY id_urut DESC LIMIT 0,1");
+$getGambar = mysqli_query($con,"SELECT * FROM barang WHERE barang_id = '$g' LIMIT 1");
+$newGambar = mysqli_fetch_assoc($getGambar);
 while($dataTes = mysqli_fetch_array($tesHasil)){
     $dataurut = mysqli_query($con,"SELECT * FROM urut,barang JOIN sub_kriteria ON sub_kriteria.id_sub_kriteria = barang.sub_kriteria_id ORDER BY id_urut DESC");
     while($dataX = mysqli_fetch_array($dataurut)){
@@ -96,9 +99,10 @@ while($dataTes = mysqli_fetch_array($tesHasil)){
         $kadaluarsa_l		= explode(";",$_POST['kadaluarsa'])[1];
         $rs_l	= explode(";",$_POST['rs'])[1];
 
-        // print_r($_POST); exit;
+        // print_r($newGambar); exit;
         if($dataX['stock'] == 0){
             $statuss = $dataX['status'];
+            $gambar = $getGambar['gambar'];
             $cek = $dataX['nama_barang'];
             $aa = $dataX['jenis_barang'];
 	        $bb = $dataX['harga'];
@@ -117,9 +121,12 @@ while($dataTes = mysqli_fetch_array($tesHasil)){
             echo "Terjual : " . $terjual_l;
             echo"<br>";
             echo "Masa Kadaluarsa : " . $kadaluarsa_l;
+            echo"<br>";
+            echo "<img src='" . $newGambar['gambar'] . "'/>";
             break;
         }else{
             $statuss = $dataX['status'];
+            $gambar = $dataX['gambar'];
             $cek = $dataX['nama_barang'];
             $aa = $dataX['jenis_barang'];
 	        $bb = $dataX['harga'];
@@ -138,6 +145,8 @@ while($dataTes = mysqli_fetch_array($tesHasil)){
             echo "Terjual : " . $terjual_l;
             echo"<br>";
             echo "Masa Kadaluarsa : " . $kadaluarsa_l;
+            echo"<br>";
+            echo "<img src='" . $newGambar['gambar'] . "'/>";
 
             break;
         }

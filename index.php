@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Perhitungan Optimasi Strategi Pemasaran</title>
+  <title>NBC SALES</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -118,7 +118,7 @@
 }
 
 #hero {
-  background: url(frontend/assets/img/background_we.jpg) top center;
+  background: url(frontend/assets/img/background1.jpg) top center;
   background-size: cover;
   position: relative;
   padding: 100px 0;
@@ -192,7 +192,7 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">POSP SALES</a></h1>
+      <h1 class="logo me-auto"><a href="index.html">NBC SALES</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -217,9 +217,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-          <h1>Selamat Datang</h1>
-          <h2>Di Aplikasi Perhitungan Optimasi Strategi Pemasaran</h2>
-          <h3>Kami menyediakan pertimbangan untuk menentukan stock barang agar penjualan semakin baik</h3>
+          <h1>Selamat Datang Di NBC Sales </h1>
+          <h2>Kami menyediakan pertimbangan untuk menentukan stock barang agar penjualan semakin baik</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="#about" class="btn-get-started scrollto">Get Started</a>
           </div>
@@ -233,7 +232,7 @@
   <main id="main">
 
     <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients section-bg">
+    <!-- <section id="clients" class="clients section-bg">
       <div class="container">
 
         <div class="row" data-aos="zoom-in">
@@ -265,7 +264,7 @@
         </div>
 
       </div>
-    </section><!-- End Cliens Section -->
+    </section>End Cliens Section -->
 
     <!-- ======= About Us Section ======= -->
     <section id="about" class="about">
@@ -278,12 +277,12 @@
         <div class="row content">
           <div class="col-lg-6">
             <p>
-              Aplikasi Perhitungan Optimasi Strategi Pemasaran ini dibuat dengan tujuan agar Staff alfamart dan manajemen dapat mengetahui barang mana yang harus direstrock .
+              Aplikasi NBC SALES ini dibuat dengan tujuan agar Staff alfamart dan manajemen dapat mengetahui barang mana yang harus di restrock .
             </p>
             <ul>
               <li><i class="ri-check-double-line"></i> Untuk meningkatkan Penjualan </li>
-              <li><i class="ri-check-double-line"></i> Untuk Meminimalisir tingkat Kerugian</li>
-              <li><i class="ri-check-double-line"></i> Meminimalisir ketidak tepatan Pemilihan Barang restock</li>
+              <li><i class="ri-check-double-line"></i> Untuk Meminimalisi tingkat Ketugian</li>
+              <li><i class="ri-check-double-line"></i> Meminimalisir ketidak tepatan Pemilihan Barang restocl</li>
             </ul>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
@@ -306,7 +305,7 @@
           <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
 
             <div class="content">
-              <h3>Petunjuk Penggunaan <strong>dari Aplikasi Perhitungan Optimasi Strategi Pemasaran</strong></h3>
+              <h3>Petunjuk Penggunaan <strong>dari Aplikasi NBC SALES</strong></h3>
               <p>
                 Berikut Adalah petunjuk penggunaannya 
               </p>
@@ -395,7 +394,7 @@
 
         <div class="section-title">
           <h2>Layanan</h2>
-          <p>Berikut adalah layanan yang didapatkan dari Aplikasi Perhitungan Optimasi Strategi Pemasaran</p>
+          <p>Berikut adalah layanan yang didapatkan dari aplikasi SaSu.</p>
         </div>
 
         <div class="row">
@@ -438,7 +437,7 @@
 
     <div class="section-title">
       <h2>Team</h2>
-      <p>Berikut Adalah Team Pengembang dari Aplikasi Perhitungan Optimasi Strategi Pemasaran</p>
+      <p>Berikut Adalah Team Pengembang dari Aplikasi SaSu ini.</p>
     </div>
 
     <div class="row">
@@ -463,9 +462,9 @@
         <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
           <div class="pic"><img src="frontend/assets/img/team/beka.jpeg" class="img-fluid" alt=""></div>
           <div class="member-info">
-            <h4>Beka Hani Susanti</h4>
+            <h4>Bekka Hani Susanti</h4>
             <span>Mahasiswa</span>
-            <p>20330001 Informatika A</p>
+            <p>20200013 Informatika A</p>
             <div class="social">
               <a href=""><i class="ri-twitter-fill"></i></a>
               <a href=""><i class="ri-facebook-fill"></i></a>
@@ -480,7 +479,7 @@
         <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
           <div class="pic"><img src="frontend/assets/img/team/Yumarlin.png" class="img-fluid" alt=""></div>
           <div class="member-info">
-            <h4>Yumarlin MZ, S.Kom., M.Pd., M.Kom</h4>
+            <h4>Yumarlin MZ.,S.Kom.,M.Pd.,M.Kom</h4>
             <span>Dosen Pengampu</span>
             <p>Mata Kuliah Kecerdasan Buatan</p>
             <div class="social">

@@ -35,7 +35,7 @@
                   <div class="card">
                     <div class="card-body">
                       <h4 class="card-title">Seleksi Barang Restock </h4>
-                      <form class="form-horizontal" method="post" action="hasil.php">
+                      <form class="form-horizontal" method="post" action="hasil.php" enctype="multipart/form-data">
                         <!-- <div class="form-group">
                     <label>Nama</label>
                     <input type="text" name="inNama" class="form-control" placeholder="Nama" required>
@@ -53,7 +53,7 @@
                                 $sql=mysqli_query($con, "SELECT * FROM barang ");
                                 while( $data = mysqli_fetch_array($sql)){
                             ?>
-                            <option value="<?=$data['nama_barang']?>"><?=$data['nama_barang']?></option>
+                            <option value="<?=$data['nama_barang']?>;<?=$data['barang_id']?>"><?=$data['nama_barang']?></option>
                             <?php
                                 }
                             ?>
